@@ -8,7 +8,7 @@ for line in f.read().splitlines():
     if line.strip() != "":
         numbers.append(line.strip())
 f.close()
-
+#message
 f = open("message.txt", "r", encoding="utf8")
 message = f.read()
 f.close()
