@@ -1,0 +1,22 @@
+import pywhatkit as kit
+import pyautogui as pg
+import time
+
+numbers = [] 
+f = open("numbers.txt", "r")
+for line in f.read().splitlines():
+    if line.strip() != "":
+        numbers.append(line.strip())
+f.close()
+
+f = open("message.txt", "r", encoding="utf8")
+message = f.read()
+f.close()
+
+for number in numbers:
+    kit.sendwhatmsg(number, message, int(time.strftime("%H")), int(time.strftime("%M")) + 1)
+    time.sleep(1) 
+    pg.press("Enter")
+    print(f"Message sent to {number}")
+
+print("All messages sent successfully!")
