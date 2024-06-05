@@ -1,14 +1,14 @@
 import pywhatkit as kit
 import pyautogui as pg
 import time
-
+#numbers
 numbers = [] 
 f = open("numbers.txt", "r")
 for line in f.read().splitlines():
     if line.strip() != "":
         numbers.append(line.strip())
 f.close()
-#message
+#messages
 f = open("message.txt", "r", encoding="utf8")
 message = f.read()
 f.close()
